@@ -1,0 +1,20 @@
+.page-header {
+  text-align: center;
+}
+
+/*.row {
+  padding: 20px;
+}*/
+
+.movieDiv {
+  background-color: lightgrey;
+  height: 250px;
+  width: 200px;
+  border: 10px solid white;
+  text-align: center;
+  border-radius: 15px;
+}
+
+h4 {
+  padding-top: 10px;
+}

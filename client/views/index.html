@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Chi MEAN</title>
@@ -9,10 +9,66 @@
 
     <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
     <script type="text/javascript" src="scripts/client.min.js"></script>
+    <script type="text/javascript" src="scripts/movies.js"></script>
 
   </head>
   <body>
+    <h1 class="page-header">Movie Collector</h1>
 
+<div class='row'>
+    <div ng-controller = "InputController">
+
+        <div class="col-md-4 inputForm">
+            <form>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="inputTitle">Title:</label>
+                  <input type="text" class="form-control" ng-model="newMovie.title">
+                </div>
+              </div>
+
+              <div class='row'>
+                <div class="col-md-8 form-group">
+                  <label for="inputDirector">Director:</label>
+                  <input type="text" class="form-control" ng-model="newMovie.director">
+                </div>
+
+
+                <div class="col-md-4 form-group">
+                  <label for="inputRunTime">Run Time:</label>
+                  <input type="text" class="form-control" ng-model="newMovie.runTime">
+                </div>
+              </div>
+
+              <div class='row'>
+                <div class="col-md-12 form-group">
+                  <label for="inputDescription">Description:</label>
+                  <input type="text" class="form-control" ng-model="newMovie.description">
+                </div>
+              </div>
+
+            <button ng-click="addMovies.newMovie(newMovie)">Add New Movie</button>
+          </form>
+        </div>
+      </div>
+
+
+      <!-- {{newMovie.title newMovie.description newMovie.director newMovie.runTime}} -->
+
+
+<div class="col-md-8">
+    <div ng-controller = "DisplayController">
+      <div ng-repeat="movie in displayMovies.collection">
+            <div class="col-md-2 movieDiv">
+                <h4>{{ movie.title }}</h4>
+                <br><h5>{{ movie.director }}</h5>
+                <br>{{ movie.description }}
+                <br><small>{{ movie.runTime }}</small>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
 
   </body>
 </html>
